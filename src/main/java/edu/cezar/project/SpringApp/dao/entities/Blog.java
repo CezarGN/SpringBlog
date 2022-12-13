@@ -14,13 +14,11 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Blog {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id ;
     private String blogTitle;
     private String username;
-
     @OneToMany
     private List<BlogPost> blogPosts = new ArrayList<BlogPost>();
 }

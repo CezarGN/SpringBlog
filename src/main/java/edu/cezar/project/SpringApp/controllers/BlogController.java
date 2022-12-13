@@ -18,16 +18,6 @@ import java.net.URISyntaxException;
 public class BlogController {
     private final BlogService blogService;
 
-
-//    List<Blog> repo = new ArrayList<>();
-//    blogcontroller(blogRepository repo) {
-//    BlogController() {
-//        this.repo = repo;
-//        this.repo.add(new Blog(1l, "MuiePSD", "CEZAR"));
-//        this.repo.add(new Blog(2l, "IMIPLACE", "ANDDREI"));
-//    }
-
-
     @GetMapping("/blog")
    public ResponseEntity <Blog> findBlog(@RequestParam long id)
     throws URISyntaxException {
@@ -36,13 +26,13 @@ public class BlogController {
                 HttpStatus.ACCEPTED);
     }
 
-//    @GetMapping("/blogs")
-//   public ResponseEntity <Blog> all()
-//        throws URISyntaxException{
-//        return new ResponseEntity(
-//                repo,
-//                HttpStatus.ACCEPTED);
-//    }
+    @GetMapping("/blogs")
+   public ResponseEntity <Blog> all()
+       throws URISyntaxException{
+       return new ResponseEntity(
+              blogService.findAll(),
+               HttpStatus.ACCEPTED);
+   }
 
 
    @DeleteMapping("/blog")
@@ -53,7 +43,6 @@ public class BlogController {
                 HttpStatus.ACCEPTED
         );
     }
-
 
 
     @PostMapping("/blog")

@@ -8,6 +8,8 @@ import edu.cezar.project.SpringApp.dto.CreateBlogDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BlogService {
 
@@ -32,6 +34,7 @@ public class BlogService {
     public boolean findBlog(long id){
         return repository.existsById(id);
     }
+    public BlogRepository findAll(){return repository;}
 
     public BlogResponseDto updateBlog(BlogResponseDto dto, long id){
 

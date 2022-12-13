@@ -14,9 +14,4 @@ public class BlogPost {
     private String postTitle;
     private String postTest;
     private String postTime;
-
-    @ManyToOne
-    private Blog blog;
-    //useless comment
-
 }

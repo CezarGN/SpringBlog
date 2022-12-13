@@ -47,8 +47,6 @@ public class BlogPostService {
     public void deleteBlogPost(long id){
         repository.deleteById(id);
     }
-
-
     //ENTITY TO DTO
     public BlogPostResponseDto entityToDto(BlogPost example){
         return (BlogPostResponseDto.builder()
@@ -56,9 +54,7 @@ public class BlogPostService {
                 .postTime(example.getPostTime())
                 .postTitle(example.getPostTitle()).build()
         );
-
     }
-
     //DTO TO ENTITY
     public BlogPost dtoToEntity(BlogPostResponseDto example){
         return (BlogPost.builder()
@@ -66,7 +62,6 @@ public class BlogPostService {
                 .postTime(example.getPostTime())
                 .postTitle(example.getPostTitle())
                 .build());
-
     }
 }
 
